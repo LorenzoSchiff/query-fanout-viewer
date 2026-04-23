@@ -119,6 +119,13 @@ This project is already useful in real analysis workflows, but some provider pat
 - **Google AI Mode support is not available yet**
   - we are also exploring how to support AI Mode in a robust way
   - research help, technical findings, and parser ideas are very welcome
+ 
+## Author
+
+Built and maintained by Lorenzo Schiff.
+
+- LinkedIn: https://www.linkedin.com/in/lorenzo-schiff/
+- GitHub: https://github.com/LorenzoSchiff
 
 ## Contributing
 
