@@ -2,7 +2,7 @@
 
 Inspect grounding and fan-out queries from ChatGPT and Claude conversations directly in your browser.
 
-Query Fanout Viewer is a bookmarklet designed for SEO, GEO, retrieval and competitive analysis workflows. It extracts provider-side search prompts, groups them into domain-scoped and open-web queries, and highlights which domains were actually cited in the final answer.
+Query Fanout Viewer is a bookmarklet designed for SEO, GEO, retrieval and competitive analysis workflows. It extracts provider-side search prompts, groups them into domain-scoped and open-web queries, and highlights which URLs and domains were actually cited in the final answer.
 
 ![Social preview placeholder](assets/social-preview.png)
 
@@ -13,6 +13,7 @@ LLM outputs hide a lot of useful retrieval behavior.
 When you work on SEO, GEO, brand visibility, competitor research or citation analysis, it is often more useful to understand:
 - what the model searched
 - how broad or narrow the search was
+- which retrieved URLs were used as final citations
 - which domains survived the retrieval process
 - which sources ended up influencing the final response
 
@@ -28,17 +29,31 @@ Query Fanout Viewer turns that hidden layer into something readable.
 - Grounding / fan-out queries
 - Domain-scoped queries
 - Open-web queries
-- Cited domains inferred from the response
-- Domain concentration across retrieved sources
+- Real cited URLs from the final response
+- Query fan-out to citation path analysis
+- Search batch, result and final citation correlation
+- Cited domains inferred from final cited URLs
+- Domain concentration across cited sources
+- ChatGPT model slug detection when available
 - Provider-aware output for ChatGPT and Claude
+
+## Citation path behavior
+
+Version `1.1` adds a citation path layer on top of the original query and domain view.
+
+For ChatGPT, the viewer reconstructs the path from `web.run` fan-out batches to search results, optional open/view refs and final citation references. Because ChatGPT often runs several queries in the same batch, attribution is strongest at the batch level. Domain-scoped queries still show real cited URL chips inline when the domain match is strong.
+
+For open-web queries, the inline row stays compact: it shows a deep link to the relevant fan-out batch instead of listing every cited URL from that batch. The full URL list remains available in the `Fan-out citation paths` section.
+
+For Claude, the mapping is usually simpler: a `web_search` tool use produces result URLs, and final citations are matched back to those results.
 
 ## Screenshots
 
 ### ChatGPT
-![ChatGPT example](assets/screenshots/chatgpt-example.png)
+![ChatGPT example](assets/screenshots/chatgpt-example1.1.png)
 
 ### Claude
-![Claude example](assets/screenshots/claude-example.png)
+![Claude example](assets/screenshots/claude-example1.1.png)
 
 ## Core use cases
 
@@ -60,6 +75,8 @@ Query Fanout Viewer turns that hidden layer into something readable.
 
 Detailed instructions are in [docs/INSTALLATION.md](docs/INSTALLATION.md).
 
+The original `src/bookmarklet.js` is kept as the earlier bookmarklet implementation.
+
 ## Privacy
 
 The bookmarklet runs in your browser session and reads provider-side conversation data using same-origin requests.
@@ -77,7 +94,7 @@ More details are in [docs/PRIVACY.md](docs/PRIVACY.md).
 
 ```text
 src/
-  bookmarklet.js      Final bookmarklet code
+  bookmarklet.js Current bookmarklet code with citation path analysis
 
 docs/
   INSTALLATION.md     Setup and usage
@@ -119,7 +136,7 @@ This project is already useful in real analysis workflows, but some provider pat
 - **Google AI Mode support is not available yet**
   - we are also exploring how to support AI Mode in a robust way
   - research help, technical findings, and parser ideas are very welcome
- 
+
 ## Author
 
 Built and maintained by Lorenzo Schiff.
