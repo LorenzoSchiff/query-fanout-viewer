@@ -13,6 +13,7 @@ Prerelease consolidating the v1.2 development cycle since v1.1.
 - Local import of supported Claude conversation JSON and documented Anthropic Messages API response JSON.
 - HTML and JSON report export, additional clipboard actions, coverage indicators and evidence provenance.
 - Separate Claude fallback for explicitly labelled visible search activity when structured retrieval is unavailable (`publicSearchActivity`, `visible-labelled-search-activity`, `same-visible-section-only`).
+- Included the ready-to-paste versioned bookmarklet and SHA-256 checksum in `dist/` as well as in the GitHub release assets, so repository source archives support installation without a build step.
 
 ### Changed
 
