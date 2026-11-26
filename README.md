@@ -6,7 +6,7 @@ Query Fanout Viewer is a client-side JavaScript bookmarklet for SEO, GEO, AI sea
 
 **Current prerelease: `v1.2.0-rc.14`.** Coverage varies with the provider, conversation format and model. This is not a complete trace of every search, and it does not expose private model reasoning.
 
-[Download the prerelease bookmarklet](https://github.com/LorenzoSchiff/query-fanout-viewer/releases/tag/v1.2.0-rc.14) | [Installation](docs/INSTALLATION.md) | [Changelog](CHANGELOG.md) | [Privacy](docs/PRIVACY.md)
+[Ready-to-paste bookmarklet](dist/query-fanout-viewer-v1.2.0-rc.14.txt) | [Release assets](https://github.com/LorenzoSchiff/query-fanout-viewer/releases/tag/v1.2.0-rc.14) | [Installation](docs/INSTALLATION.md) | [Changelog](CHANGELOG.md) | [Privacy](docs/PRIVACY.md)
 
 ![Query Fanout Viewer prerelease overview with actual ChatGPT and Claude report excerpts](assets/social-preview.png)
 
@@ -71,13 +71,16 @@ Missing data does not establish that the provider performed no searches or that 
 
 ## Installation
 
-1. Open the [v1.2.0-rc.14 release](https://github.com/LorenzoSchiff/query-fanout-viewer/releases/tag/v1.2.0-rc.14) and download `query-fanout-viewer-v1.2.0-rc.14.txt` from Assets.
+1. Obtain the ready-to-paste `query-fanout-viewer-v1.2.0-rc.14.txt` using any of these methods:
+   - **Repository:** open [the TXT in `dist/`](dist/query-fanout-viewer-v1.2.0-rc.14.txt) and download the raw file.
+   - **ZIP:** choose Code > Download ZIP (or download Source code (zip) from the RC14 release), extract the archive and open `dist/query-fanout-viewer-v1.2.0-rc.14.txt`.
+   - **Release assets:** download the TXT directly from the [v1.2.0-rc.14 release](https://github.com/LorenzoSchiff/query-fanout-viewer/releases/tag/v1.2.0-rc.14).
 2. Open the file in a plain-text editor and copy its entire contents, including the `javascript:` prefix.
 3. Create or edit a browser bookmark named `Query Fanout Viewer`; paste the copied value into its URL field.
 4. Open a supported ChatGPT or Claude conversation in a normal logged-in browser session. Wait for the answer to finish.
 5. Click the bookmark. Allow the report pop-up if your browser blocks it.
 
-The release TXT is the ready-to-paste distribution asset. `src/bookmarklet.js` is the readable source, not the encoded bookmark URL. Existing users must replace their saved bookmark URL to upgrade; the bookmarklet does not update itself. See [detailed instructions](docs/INSTALLATION.md).
+The TXT in `dist/` and the release asset are byte-identical ready-to-paste distribution files. Neither requires a build, encoding step or dependency installation. Verify the TXT with `SHA256SUMS.txt` in the same folder or in the release assets. `src/bookmarklet.js` is the readable source, not the encoded bookmark URL. Existing users must replace their saved bookmark URL to upgrade; the bookmarklet does not update itself. See [detailed instructions](docs/INSTALLATION.md).
 
 ## Reading the dashboard
 
@@ -113,6 +116,8 @@ Only run bookmarklet code you trust. See [Privacy](docs/PRIVACY.md) and [Securit
 
 ```text
 src/bookmarklet.js       Readable bookmarklet source
+dist/query-fanout-viewer-v1.2.0-rc.14.txt  Ready-to-paste bookmarklet
+dist/SHA256SUMS.txt      Distribution checksum
 docs/INSTALLATION.md     Setup, usage and troubleshooting
 docs/PRIVACY.md          Data handling and privacy guidance
 assets/social-preview.png          Project preview
@@ -120,7 +125,7 @@ assets/screenshots/               Report screenshots
 CHANGELOG.md             Release history
 ```
 
-The ready-to-copy encoded bookmarklet is distributed as a versioned GitHub release asset.
+The versioned encoded bookmarklet and its checksum are committed to `dist/` and attached to the release. This keeps the repository and GitHub-generated source archives installable without a separate download. Future releases must update the source, encoded distribution, checksum and release assets together.
 
 ## Status and roadmap
 

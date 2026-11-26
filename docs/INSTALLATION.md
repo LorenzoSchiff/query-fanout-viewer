@@ -8,8 +8,8 @@ No extension, local server, package installation or API key is required to use t
 
 ## Install or upgrade to v1.2.0-rc.14
 
-1. Visit the [prerelease page](https://github.com/LorenzoSchiff/query-fanout-viewer/releases/tag/v1.2.0-rc.14).
-2. Download `query-fanout-viewer-v1.2.0-rc.14.txt` under Assets.
+1. Choose a download method: [repository distribution TXT](../dist/query-fanout-viewer-v1.2.0-rc.14.txt), the [prerelease page](https://github.com/LorenzoSchiff/query-fanout-viewer/releases/tag/v1.2.0-rc.14) (Assets), or the repository/release source ZIP.
+2. Save the raw TXT from the repository or download it from Assets. If using a ZIP, extract it and locate `dist/query-fanout-viewer-v1.2.0-rc.14.txt`. The copies are identical and can be verified using `SHA256SUMS.txt`. Do not copy `src/bookmarklet.js` into a bookmark; no build or manual encoding is necessary.
 3. Open the TXT in a plain-text editor. Select all and copy. The value begins with `javascript:`.
 4. In your browser's bookmark manager, create a bookmark (or edit the existing one). Use `Query Fanout Viewer RC14` as its name if you want to retain an older version separately.
 5. Paste the entire copied value into the URL/address field and save. Check that the `javascript:` prefix is still present. Do not paste it into the browser's main address bar or a search box.
